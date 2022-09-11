@@ -1,0 +1,90 @@
+canvas {
+    /* position: absolute; */
+    /* top: 250px; */
+    /* left: 10px; */
+    border-radius: 10px;
+    width: 1000px;
+    height: 400px;
+    /* width:  auto; */
+    /* height: 2000px; */
+    /* border: 1px solid grey; */
+    
+
+    image-rendering: optimizeSpeed;             
+    image-rendering: -moz-crisp-edges;         
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: -o-crisp-edges;           
+    image-rendering: crisp-edges;               
+    -ms-interpolation-mode: nearest-neighbor;   
+}
+
+#editor {
+    /* position: relative; */
+    /* position: absolute; */
+    padding: 10px;
+    border: 1px solid grey;
+    margin: 20px;
+    background-color: #444;
+    color: white;
+    font-size: 14px;
+    font-family: monospace;
+    text-align: left;
+    min-width: 1000px;
+    width: 2500px;
+    max-width: 2500px;
+}
+
+.statement {
+    color: orange;
+}
+
+button {
+    padding: 10px;
+    background-color: gainsboro;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 0.4fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "editor editor execute"
+        "editor editor execute";
+}
+
+.editor {
+    grid-area: editor;
+}
+
+.execute {
+    grid-area: execute;
+}
+
+.clear {
+    grid-area: clear;
+}
+
+key {
+    color: red;
+}
+
+.circuitBg{
+    background:
+    conic-gradient(from 90deg at 1px 1px,#0000 90deg,rgb(183, 183, 229) 0) 
+    0 0/15px 15px;
+    margin: 20px;
+    padding: 10px;
+    min-width: 1000px;
+    max-width: 1490px;
+    /* height: 2000px; */
+}
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 350%;
+}

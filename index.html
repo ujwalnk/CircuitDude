@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Dude</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ef-infinite-canvas@0.5.4-alpha/dist/infinite-canvas.js"></script>
+
+    <script src="./scripts/verify.js"></script>
+    <script src="./scripts/comms.js"></script>
+    <script src="./scripts/drawComponenets.js"></script>
+
+    <link rel="shortcut icon" href="./res/ico.png" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <center>
+        <h1>Circuit Dude</h1>
+    </center>
+    <div>
+        <div class="container">
+            <div class="editor">
+                <div contenteditable="true" id="editor" style="width: 90%; min-height:200px" onkeyup="codeHighlight()">
+                </div>
+                <div class="circuitBg">
+                    <canvas id="canvas" height="400px" width="1000px"></canvas>
+                    <button onclick="verify(document.getElementById('editor'))">Circuit</button>
+                    <button onclick='cls()'>Clear</button>
+                </div>
+            </div>
+            <div class="execute">
+            </div>
+        </div>
+
+
+
+    </div>
+    <center></center>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/drawWire.js"></script>
+    <script src="./scripts/voltageLines.js"></script>
+
+
+    <script>
+
+        var infiniteCanvas = new InfiniteCanvas(document.getElementById("canvas"));
+
+
+        // drawResistor("canvas", 20, 20, 40);
+        drawDiode("canvas");
+        drawCap("canvas");
+        drawIC(8, "canvas", "IN74HC595A", "red");
+        drawWire("canvas", 0, 0, 2, 1);
+        drawLED("canvas", "red");
+        drawIC(8, "canvas", "IN74HC595A", "red");
+        drawInductor("canvas");
+        drawWire("canvas", 4, 1, 5, 0);
+        drawNPN("canvas");
+        drawIC(3, "canvas", "555");
+        drawIC(5, "canvas", "755");
+        drawIC(3, "canvas", "758");
+        drawResistor("canvas", 10);
+        drawNPN("canvas");
+        drawIC(3, "canvas", "555");
+        drawIC(5, "canvas", "755");
+        drawIC(3, "canvas", "758");
+        drawResistor("canvas", 10);
+        drawNPN("canvas");
+        drawIC(3, "canvas", "555");
+        drawIC(5, "canvas", "755");
+        drawIC(3, "canvas", "758");
+        drawResistor("canvas", 10);
+
+        // // drawIC(8, "canvas", "IN74HC595A");
+
+
+        // drawWire("canvas", 0, 0, 1, 1);
+        // drawWire("canvas", 1, 2, 2, 0);
+        // drawWire("canvas", 2, 1, 3, 0);
+        // drawWire("canvas", 3, 2, 1, 0);
+
+        // drawWire("canvas", 0, 9, 1, 3);
+
+        // drawWire("canvas", 0, 10, 2, 4);
+        // drawWire("canvas", 0, 1, 2, 5);
+
+        // supplyWire("canvas", 2, 0, 0);
+        // supplyWire("canvas", 2, 4, 5)
+        // supplyWire("canvas", 2, 5, 5);
+
+        // addVoltageLines("canvas", 12, "brown");
+        // addVoltageLines("canvas", 0, "black");
+        // addVoltageLines("canvas", 10, "red");
+    </script>
+
+
+</body>
+
+</html>
